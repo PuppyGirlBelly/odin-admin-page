@@ -1,18 +1,136 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Admin Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-        <script src="js/main.js" defer></script>
-    </head>
-    <body>
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-    </body>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="layout-grid">
+      <div class="sidebar">
+        <div class="logo"><img src="#" alt="logo"><span>Dashboard</span></div>
+        <div class="navigation">
+          <div class="nav_option"><img src="#" alt="house"><span>Home</span></div>
+          <div class="nav_option"><img src="#" alt="id"><span>Profile</span></div>
+          <div class="nav_option"><img src="#" alt="message"><span>Messages</span></div>
+          <div class="nav_option"><img src="#" alt="clock"><span>History</span></div>
+          <div class="nav_option"><img src="#" alt="paper"><span>Tasks</span></div>
+          <div class="nav_option"><img src="#" alt="people"><span>Communities</span></div>
+          <div class="nav_option empty"></div>
+          <div class="nav_option"><img src="#" alt="gear"><span>Settings</span></div>
+          <div class="nav_option"><img src="#" alt="question"><span>Support</span></div>
+          <div class="nav_option"><img src="#" alt="sheild"><span>Privacy</span></div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="search">
+          <label for="search"><img src="#" alt="magnifying glass"></label>
+          <input type="search" id="search" name="search">
+        </div>
+        <div class="profile-corner">
+          <img src="#" alt="bell" class="bell">
+          <img src="#" alt="avatar" class="avatar my_avatar">
+          <span class="name">AnnaLee</span>
+        </div>
+        <div class="greeting">
+          <img src="#" alt="avatar" class="avatar my_avatar">
+          <p>Hi there,</p>
+          <p class="name">AnnaLee (@AnnaLee)</p>
+        </div>
+        <div class="post-buttons">
+          <button type="button" id="new">New</button>
+          <button type="button" id="Upload">Upload</button>
+          <button type="button" id="share">Share</button>
+        </div>
+      </div>
+      <div class="dash">
+        <div class="projects">
+          <h2>Your Projects</h2>
+          <div class="card">
+            <p class="card-title">Super Cool Project</p>
+            <p class="card-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+            <img src="#" alt="fave" class="fave">
+            <img src="#" alt="watch" class="watch">
+            <img src="#" alt="share" class="share">
+          </div>
+          <div class="card">
+            <p class="card-title">Less Cool Project</p>
+            <p class="card-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+            <img src="#" alt="fave" class="fave">
+            <img src="#" alt="watch" class="watch">
+            <img src="#" alt="share" class="share">
+          </div>
+          <div class="card">
+            <p class="card-title">Impossible App</p>
+            <p class="card-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+            <img src="#" alt="fave" class="fave">
+            <img src="#" alt="watch" class="watch">
+            <img src="#" alt="share" class="share">
+          </div>
+          <div class="card">
+            <p class="card-title">Easy Peasy App</p>
+            <p class="card-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+            <img src="#" alt="fave" class="fave">
+            <img src="#" alt="watch" class="watch">
+            <img src="#" alt="share" class="share">
+          </div>
+          <div class="card">
+            <p class="card-title">Ad Blocker</p>
+            <p class="card-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+            <img src="#" alt="fave" class="fave">
+            <img src="#" alt="watch" class="watch">
+            <img src="#" alt="share" class="share">
+          </div>
+          <div class="card">
+            <p class="card-title">Money Maker</p>
+            <p class="card-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+            <img src="#" alt="fave" class="fave">
+            <img src="#" alt="watch" class="watch">
+            <img src="#" alt="share" class="share">
+          </div>
+        </div>
+        <div class="announcements">
+          <h2>Announcements</h2>
+          <div class="news">
+            <p class="news-title">Site Maintenance</p>
+            <p class="news-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+          </div>
+          <div class="news">
+            <p class="news-title">Community Share Day</p>
+            <p class="news-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+          </div>
+          <div class="news">
+            <p class="news-title">Updated Privacy Policy</p>
+            <p class="news-description">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+          </div>
+        </div>
+        <div class="trending">
+          <h2>Trending</h2>
+          <div class="profiles">
+            <div class="profile">
+              <img src="#" alt="tegan" class="avatar">
+              <p class="trending_name">@tegan</p>
+              <p class="trending_title">World Peace Builder</p>
+              <img src="#" alt="me" class="avatar my_avatar">
+              <p class="trending_name">@AnnaLee</p>
+              <p class="trending_title">Super Cool Project</p>
+              <img src="#" alt="kendall" class="avatar">
+              <p class="trending_name">@kendall</p>
+              <p class="trending_title">Life Changing App</p>
+              <img src="#" alt="alex" class="avatar">
+              <p class="trending_name">@alex</p>
+              <p class="trending_title">No Traffic Maker</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

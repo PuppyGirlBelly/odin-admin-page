@@ -1,3 +1,62 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
+.layout-grid {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 66px auto;
+  grid-template-rows: 200px auto;
+  grid-template-areas: "sidebar header" "sidebar dash";
+}
+
+.sidebar {
+  background-color: #6D6875;
+  height: 100vh;
+}
+
+.header {
+  background-color: #FFCDB1;
+  grid-area: header;
+}
+
+.dash {
+  background-color: #FFB4A2;
+  grid-area: dash;
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  grid-template-rows: repeat(2 auto);
+  grid-template-areas: "announcements trending" "projects projects";
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.announcements {
+  grid-area: announcements;
+}
+
+.trending {
+  grid-area: trending;
+}
+
+/* Tablet Dimensions*/
+@media screen and (min-width: 768px) {
+  .dash {
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "projects projects announcements" "projects projects announcements" "projects projects announcements" "projects projects trending" "projects projects trending" "projects projects trending";
+  }
+}
+/* Desktop Dimensions */
+@media screen and (min-width: 992px) {
+  .layout-grid {
+    grid-template-columns: 300px auto;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
