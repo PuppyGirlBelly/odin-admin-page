@@ -1,0 +1,98 @@
+/* The following code was taken from this codepen to create a CSS-only
+ * hamburger menu:
+ * https://codepen.io/andreykrokhin/pen/mGEqja */
+.sidebar {
+  #sidebar-checkbox {
+    opacity: 0;
+
+    &:checked ~ .hamburger-button > span {
+      transform: rotate(45deg);
+    }
+    &:checked ~ .hamburger-button > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+    &:checked ~ .hamburger-button > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+    &:checked ~ nav {
+      visibility: visible;
+      left: 0;
+    }
+  }
+
+  .hamburger-button {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .hamburger-button > span,
+  .hamburger-button > span::before,
+  .hamburger-button > span::after {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+
+    background-color: #cecece;
+
+    transition-duration: .25s;
+  }
+  .hamburger-button > span::before {
+    content: '';
+    top: -12px;
+  }
+  .hamburger-button > span::after {
+    content: '';
+    top: 12px;
+  }
+
+  nav {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+
+    width: 100vw;
+    height: 100%;
+
+    padding-top: 80px;
+
+    transition-duration: .25s;
+  }
+}
+
+/* Tablet Dimensions*/
+@media screen and (min-width: 768px) {
+  .sidebar nav {
+    width: 300px;
+  }
+}
+
+/* Desktop Dimensions */
+@media screen and (min-width: 992px) {
+  .sidebar {
+     #sidebar-checkbox,
+    .hamburger-button {
+      display: none;
+    }
+
+    nav {
+      display: unset;
+      visibility: unset;
+    }
+  }
+}
