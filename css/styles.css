@@ -73,7 +73,7 @@
   }
   .sidebar nav {
     visibility: visible;
-    padding-top: unset;
+    padding-top: 20px;
   }
 }
 * {
@@ -84,6 +84,7 @@
 
 .layout-grid {
   display: grid;
+  min-height: 100vh;
   grid-template-columns: 60px auto;
   grid-template-rows: 200px auto;
   grid-template-areas: "sidebar header" "sidebar dash";
@@ -101,6 +102,46 @@
 .sidebar nav {
   padding-left: 20px;
   background-color: #6D6875;
+  color: #FFCDB1;
+  font-weight: bold;
+}
+.sidebar nav .logo {
+  margin-bottom: 24px;
+}
+.sidebar nav .logo img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.sidebar nav .logo span {
+  font-size: 2.2rem;
+  vertical-align: middle;
+}
+.sidebar nav ul {
+  display: grid;
+  grid-auto-rows: minmax(auto, 42px);
+  gap: 8px;
+}
+.sidebar nav ul li {
+  list-style: none;
+  font-size: 2rem;
+}
+.sidebar nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  height: 42px;
+  width: 100%;
+}
+.sidebar nav ul li a:visited {
+  color: #FFCDB1;
+}
+.sidebar nav ul li a img {
+  width: 32px;
+  height: 32px;
+  margin: 5px 6px;
+}
+.sidebar nav ul li a span {
+  vertical-align: top;
 }
 
 .header {
@@ -140,7 +181,6 @@
 /* Desktop Dimensions */
 @media screen and (min-width: 992px) {
   .layout-grid {
-    height: 100vh;
     grid-template-columns: 300px auto;
   }
 }

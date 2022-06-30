@@ -73,7 +73,7 @@
   }
   .sidebar nav {
     visibility: visible;
-    padding-top: unset;
+    padding-top: 20px;
   }
 }
 
