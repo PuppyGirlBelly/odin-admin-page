@@ -60,9 +60,7 @@
   }
 
   nav {
-    display: block;
     position: fixed;
-    visibility: hidden;
     top: 0;
     left: -100%;
 
@@ -91,8 +89,8 @@
     }
 
     nav {
-      display: unset;
-      visibility: unset;
+      visibility: visible;
+      padding-top: unset;
     }
   }
 }
