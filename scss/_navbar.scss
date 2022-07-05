@@ -1,0 +1,62 @@
+@use 'color';
+@use "hamburger_menu";
+
+.sidebar {
+  background-color: color.$c5;
+
+  nav {
+    padding-left: 20px;
+    background-color: color.$c5;
+    color: color.$c1;
+    font-weight: bold;
+
+    .logo {
+      margin-bottom: 24px;
+      border: 1px solid red;
+
+      img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+      }
+
+      span {
+        font-size: 2.2rem;
+        vertical-align: middle;
+      }
+    }
+
+    ul {
+      display: grid;
+      grid-auto-rows: minmax(auto, 42px);
+      gap: 8px;
+
+      li {
+        list-style: none;
+        font-size: 2rem;
+
+        a {
+          display: inline-block;
+          text-decoration: none;
+          height: 42px;
+          width: 100%;
+
+          &:visited {
+            color: color.$c1;
+          }
+
+          img {
+            width: 32px;
+            height: 32px;
+            margin: 5px 6px;
+          }
+
+          span {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+}
+
