@@ -1,5 +1,93 @@
 @use 'color';
 
+$double-height: 64px;
+$height: 32px;
+$half-height: 16px;
+
 .header {
   background-color: color.$c1;
+  color: color.$c5;
+  display: grid;
+  font-weight: bold;
+  grid-template-areas: "search profile"
+                       "greeting buttons";
+  grid-template-columns: 60% auto;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  padding: $half-height $height;
+
+  .search {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    gap: $half-height;
+
+    img {
+      width: $height;
+    }
+    input {
+      border-radius: $half-height;
+      border: none;
+      background-color: color.$c4;
+      color: color.$c1;
+      height: $height;
+      padding-left: $half-height;
+      padding-right: $half-height;
+      flex-grow: 1;
+
+      &:focus {
+        outline: 2px solid color.$c3;
+      }
+    }
+  }
+  .profile-corner {
+    grid-area: profile;
+    display: flex;
+    align-items: center;
+    gap: $height;
+    justify-self: end;
+
+    .bell {
+      width: $height;
+    }
+    .avatar {
+      width: calc($height * 1.5);
+    }
+  }
+  .greeting {
+    grid-area: greeting;
+    display: grid;
+    grid-template-columns: $double-height auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "avatar hi"
+                         "avatar name";
+    column-gap: $half-height;
+
+    .avatar {
+      height: 100%;
+      grid-area: avatar;
+    }
+    .name {
+      font-size: 1.5rem;
+    }
+  }
+  .post-buttons {
+    grid-area: buttons;
+    justify-self: end;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: $half-height;
+
+    button {
+      background: color.$c4;
+      border: none;
+      height: calc($height * 1.25);
+      border-radius: calc($half-height * 1.25);
+      color: color.$c1;
+      flex-basis: 120px;
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+  }
 }
