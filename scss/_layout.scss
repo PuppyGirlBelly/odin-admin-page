@@ -2,7 +2,6 @@
   display: grid;
   min-height: 100vh;
   grid-template-columns: 60px auto;
-  grid-template-rows: 200px auto;
   grid-template-areas: "sidebar header"
   "sidebar dash";
 }
@@ -23,5 +22,6 @@
 @media screen and (min-width: 992px) {
   .layout-grid {
     grid-template-columns: 300px auto;
+    grid-template-rows: 200px auto;
   }
 }

@@ -2,7 +2,6 @@
   display: grid;
   min-height: 100vh;
   grid-template-columns: 60px auto;
-  grid-template-rows: 200px auto;
   grid-template-areas: "sidebar header" "sidebar dash";
 }
 
@@ -22,6 +21,7 @@
 @media screen and (min-width: 992px) {
   .layout-grid {
     grid-template-columns: 300px auto;
+    grid-template-rows: 200px auto;
   }
 }
 /* The following code was taken from this codepen to create a CSS-only
@@ -154,15 +154,14 @@
 }
 
 .header {
-  background-color: #FFCDB1;
-  color: #6D6875;
   display: grid;
-  font-weight: bold;
-  grid-template-areas: "search profile" "greeting buttons";
-  grid-template-columns: 60% auto;
-  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "profile" "search" "buttons";
   align-items: center;
   padding: 16px 32px;
+  row-gap: 16px;
+  background-color: #FFCDB1;
+  color: #6D6875;
+  font-weight: bold;
 }
 .header .search {
   grid-area: search;
@@ -181,17 +180,17 @@
   height: 32px;
   padding-left: 16px;
   padding-right: 16px;
-  flex-grow: 1;
+  width: 100%;
 }
 .header .search input:focus {
   outline: 2px solid #E5989B;
 }
 .header .profile-corner {
   grid-area: profile;
+  justify-self: end;
   display: flex;
   align-items: center;
   gap: 32px;
-  justify-self: end;
 }
 .header .profile-corner .bell {
   width: 32px;
@@ -201,14 +200,14 @@
 }
 .header .greeting {
   grid-area: greeting;
-  display: grid;
+  display: none;
   grid-template-columns: 64px auto;
   grid-template-rows: auto auto;
   grid-template-areas: "avatar hi" "avatar name";
   column-gap: 16px;
 }
 .header .greeting .avatar {
-  unit: 100%;
+  width: 100%;
   grid-area: avatar;
 }
 .header .greeting .name {
@@ -218,7 +217,6 @@
   grid-area: buttons;
   justify-self: end;
   display: flex;
-  justify-content: flex-end;
   width: 100%;
   gap: 16px;
 }
@@ -228,18 +226,38 @@
   height: 40px;
   border-radius: 20px;
   color: #FFCDB1;
-  flex-basis: 120px;
-  flex-grow: 0;
+  flex-grow: 1;
   flex-shrink: 1;
 }
 
+/* Desktop Dimensions */
+@media screen and (min-width: 992px) {
+  .header {
+    grid-template-areas: "search profile" "greeting buttons";
+    grid-template-columns: 60% auto;
+    grid-template-rows: 1fr 1fr;
+  }
+  .header .greeting {
+    display: grid;
+  }
+  .header .search input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: unset;
+  }
+  .header .post-buttons {
+    justify-content: flex-end;
+  }
+  .header .post-buttons .buttons {
+    flex-basis: 120px;
+  }
+}
 .dash {
   background-color: #FFB4A2;
   grid-area: dash;
   display: grid;
-  grid-template-columns: repeat(2 1fr);
-  grid-template-rows: repeat(2 auto);
-  grid-template-areas: "announcements trending" "projects projects";
+  grid-template-rows: repeat(3 auto);
+  grid-template-areas: "announcements" "trending" "projects";
   gap: 16px;
   padding: 32px 16px;
   color: #6D6875;
@@ -252,7 +270,7 @@
 .dash .projects {
   grid-area: projects;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: auto;
   grid-template-rows: min-content 225px;
   grid-auto-rows: 225px;
   gap: 32px;
@@ -298,9 +316,22 @@
 /* Tablet Dimensions*/
 @media screen and (min-width: 768px) {
   .dash {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "announcements trending" "projects projects";
+  }
+  .dash .projects {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+@media screen and (min-width: 992px) {
+  .dash {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "projects projects announcements" "projects projects announcements" "projects projects announcements" "projects projects trending" "projects projects trending" "projects projects trending";
+  }
+  .dash .projects {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
 * {

@@ -8,10 +8,10 @@ $double-unit: 64px;
   background-color: color.$c2;
   grid-area: dash;
   display: grid;
-  grid-template-columns: repeat(2 1fr);
-  grid-template-rows: repeat(2 auto);
-  grid-template-areas: "announcements trending"
-  "projects projects";
+  grid-template-rows: repeat(3 auto);
+  grid-template-areas: "announcements"
+                       "trending"
+                       "projects";
   gap: $half-unit;
   padding: $unit $half-unit;
 
@@ -27,7 +27,7 @@ $double-unit: 64px;
   .projects {
     grid-area: projects;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: auto;
     grid-template-rows: min-content 225px; // min-content to accomodate the h2 above the projets card
     grid-auto-rows: 225px;
     gap: $unit;
@@ -86,6 +86,19 @@ $double-unit: 64px;
 /* Tablet Dimensions*/
 @media screen and (min-width: 768px) {
   .dash {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "announcements trending"
+    "projects projects";
+
+    .projects {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .dash {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: "projects projects announcements"
@@ -94,6 +107,10 @@ $double-unit: 64px;
     "projects projects trending"
     "projects projects trending"
     "projects projects trending";
+
+    .projects {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
   }
 }
 
