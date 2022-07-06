@@ -1,0 +1,99 @@
+@use 'color';
+
+$half-unit: 16px;
+$unit: 32px;
+$double-unit: 64px;
+
+.dash {
+  background-color: color.$c2;
+  grid-area: dash;
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  grid-template-rows: repeat(2 auto);
+  grid-template-areas: "announcements trending"
+  "projects projects";
+  gap: $half-unit;
+  padding: $unit $half-unit;
+
+  color: color.$c5;
+
+
+  .card {
+    background-color: color.$c1;
+    border-radius: $half-unit;
+    padding: $unit $unit $half-unit $half-unit;
+  }
+
+  .projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: min-content 225px; // min-content to accomodate the h2 above the projets card
+    grid-auto-rows: 225px;
+    gap: $unit;
+
+    h2 {
+      grid-column: 1 / -1; //Ensures that the first row is always taken up by the title.
+    }
+
+    .card {
+      border-left: $half-unit solid color.$c4;
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: auto repeat(3, $unit);
+      grid-template-areas: "title title title title"
+                           "desc  desc  desc  desc"
+                           "....  fave  watch share";
+      column-gap: $half-unit;
+
+      .card-title {
+        grid-area: title;
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+
+      .card-description {
+        grid-area: desc;
+      }
+
+      img {
+        width: $unit;
+      }
+
+      .fave {
+        grid-area: fave;
+      }
+
+      .watch {
+        grid-area: watch;
+      }
+
+      .share {
+        grid-area: share;
+      }
+    }
+  }
+
+  .announcements {
+    grid-area: announcements;
+  }
+
+  .trending {
+    grid-area: trending;
+  }
+}
+
+/* Tablet Dimensions*/
+@media screen and (min-width: 768px) {
+  .dash {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "projects projects announcements"
+    "projects projects announcements"
+    "projects projects announcements"
+    "projects projects trending"
+    "projects projects trending"
+    "projects projects trending";
+  }
+}
+

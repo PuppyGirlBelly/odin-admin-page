@@ -1,5 +1,3 @@
-@use 'color';
-
 .layout-grid {
   display: grid;
   min-height: 100vh;
@@ -18,39 +16,7 @@
 }
 
 .dash {
-  background-color: color.$c2;
   grid-area: dash;
-  display: grid;
-  grid-template-columns: repeat(2 1fr);
-  grid-template-rows: repeat(2 auto);
-  grid-template-areas: "announcements trending"
-  "projects projects";
-}
-
-.projects {
-  grid-area: projects;
-}
-
-.announcements {
-  grid-area: announcements;
-}
-
-.trending {
-  grid-area: trending;
-}
-
-/* Tablet Dimensions*/
-@media screen and (min-width: 768px) {
-  .dash {
-    grid-template-columns: repeat(3 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: "projects projects announcements"
-    "projects projects announcements"
-    "projects projects announcements"
-    "projects projects trending"
-    "projects projects trending"
-    "projects projects trending";
-  }
 }
 
 /* Desktop Dimensions */
