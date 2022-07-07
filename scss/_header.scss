@@ -94,7 +94,7 @@ $half-unit: 16px;
 }
 
 /* Desktop Dimensions */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1050px) {
   .header {
     grid-template-areas: "search profile"
                          "greeting buttons";

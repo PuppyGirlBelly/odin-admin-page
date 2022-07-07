@@ -18,7 +18,7 @@
 }
 
 /* Desktop Dimensions */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1050px) {
   .layout-grid {
     grid-template-columns: 300px auto;
     grid-template-rows: 200px auto;
@@ -93,7 +93,7 @@
   }
 }
 /* Desktop Dimensions */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1050px) {
   .sidebar #sidebar-checkbox,
 .sidebar .hamburger-button {
     display: none;
@@ -231,7 +231,7 @@
 }
 
 /* Desktop Dimensions */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1050px) {
   .header {
     grid-template-areas: "search profile" "greeting buttons";
     grid-template-columns: 60% auto;
@@ -269,16 +269,16 @@
 }
 .dash .projects {
   grid-area: projects;
+}
+.dash .projects h2 {
+  margin-bottom: 32px;
+}
+.dash .projects .project-grid {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: min-content 225px;
   grid-auto-rows: 225px;
   gap: 32px;
 }
-.dash .projects h2 {
-  grid-column: 1/-1;
-}
-.dash .projects .card {
+.dash .projects .project-grid .card {
   border-left: 16px solid #B5838D;
   display: grid;
   grid-template-rows: repeat(3, auto);
@@ -286,24 +286,24 @@
   grid-template-areas: "title title title title" "desc  desc  desc  desc" "....  fave  watch share";
   column-gap: 16px;
 }
-.dash .projects .card .card-title {
+.dash .projects .project-grid .card .card-title {
   grid-area: title;
   font-weight: bold;
   font-size: 1.25rem;
 }
-.dash .projects .card .card-description {
+.dash .projects .project-grid .card .card-description {
   grid-area: desc;
 }
-.dash .projects .card img {
+.dash .projects .project-grid .card img {
   width: 32px;
 }
-.dash .projects .card .fave {
+.dash .projects .project-grid .card .fave {
   grid-area: fave;
 }
-.dash .projects .card .watch {
+.dash .projects .project-grid .card .watch {
   grid-area: watch;
 }
-.dash .projects .card .share {
+.dash .projects .project-grid .card .share {
   grid-area: share;
 }
 .dash .announcements,
@@ -337,7 +337,6 @@
 }
 .dash .trending {
   grid-area: trending;
-  height: 100%;
 }
 
 /* Tablet Dimensions*/
@@ -347,18 +346,20 @@
     grid-template-rows: repeat(2, auto);
     grid-template-areas: "announcements trending" "projects projects";
   }
-  .dash .projects {
+  .dash .projects .project-grid {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
+/* Desktop Dimensions*/
 @media screen and (min-width: 992px) {
   .dash {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) minmax(300px, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: "projects projects announcements" "projects projects announcements" "projects projects announcements" "projects projects trending" "projects projects trending" "projects projects trending";
+    grid-template-areas: "projects projects projects announcements" "projects projects projects announcements" "projects projects projects announcements" "projects projects projects trending" "projects projects projects trending" "projects projects projects trending";
   }
-  .dash .projects {
+  .dash .projects .project-grid {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    align-content: space-between;
   }
 }
 * {
