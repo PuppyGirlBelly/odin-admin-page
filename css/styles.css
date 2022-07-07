@@ -259,7 +259,7 @@
   grid-template-rows: repeat(3 auto);
   grid-template-areas: "announcements" "trending" "projects";
   gap: 16px;
-  padding: 32px 16px;
+  padding: 32px 16px 64px 16px;
   color: #6D6875;
 }
 .dash .card {
@@ -269,16 +269,16 @@
 }
 .dash .projects {
   grid-area: projects;
-}
-.dash .projects h2 {
-  margin-bottom: 32px;
-}
-.dash .projects .project-grid {
   display: grid;
-  grid-auto-rows: 225px;
+  grid-template-rows: min-content;
+  grid-auto-rows: 1fr;
+  align-content: space-between;
   gap: 32px;
 }
-.dash .projects .project-grid .card {
+.dash .projects h2 {
+  grid-column: 1/-1;
+}
+.dash .projects .card {
   border-left: 16px solid #B5838D;
   display: grid;
   grid-template-rows: repeat(3, auto);
@@ -286,24 +286,24 @@
   grid-template-areas: "title title title title" "desc  desc  desc  desc" "....  fave  watch share";
   column-gap: 16px;
 }
-.dash .projects .project-grid .card .card-title {
+.dash .projects .card .card-title {
   grid-area: title;
   font-weight: bold;
   font-size: 1.25rem;
 }
-.dash .projects .project-grid .card .card-description {
+.dash .projects .card .card-description {
   grid-area: desc;
 }
-.dash .projects .project-grid .card img {
+.dash .projects .card img {
   width: 32px;
 }
-.dash .projects .project-grid .card .fave {
+.dash .projects .card .fave {
   grid-area: fave;
 }
-.dash .projects .project-grid .card .watch {
+.dash .projects .card .watch {
   grid-area: watch;
 }
-.dash .projects .project-grid .card .share {
+.dash .projects .card .share {
   grid-area: share;
 }
 .dash .announcements,
@@ -338,6 +338,27 @@
 .dash .trending {
   grid-area: trending;
 }
+.dash .trending .profile {
+  display: grid;
+  grid-template-columns: 64px auto;
+  grid-template-rows: repeat(auto);
+  grid-template-areas: "avatar name" "avatar title";
+  column-gap: 16px;
+  margin-bottom: 16px;
+}
+.dash .trending .profile .avatar {
+  grid-area: avatar;
+}
+.dash .trending .profile .name {
+  grid-area: name;
+  align-self: end;
+  font-weight: bold;
+}
+.dash .trending .profile .title {
+  grid-area: title;
+  align-self: start;
+  color: #B5838D;
+}
 
 /* Tablet Dimensions*/
 @media screen and (min-width: 768px) {
@@ -346,20 +367,17 @@
     grid-template-rows: repeat(2, auto);
     grid-template-areas: "announcements trending" "projects projects";
   }
-  .dash .projects .project-grid {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  .dash .projects {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    align-content: space-between;
   }
 }
 /* Desktop Dimensions*/
 @media screen and (min-width: 992px) {
   .dash {
     grid-template-columns: repeat(3, 1fr) minmax(300px, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas: "projects projects projects announcements" "projects projects projects announcements" "projects projects projects announcements" "projects projects projects trending" "projects projects projects trending" "projects projects projects trending";
-  }
-  .dash .projects .project-grid {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    align-content: space-between;
   }
 }
 * {

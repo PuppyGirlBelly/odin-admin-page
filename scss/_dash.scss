@@ -13,7 +13,7 @@ $double-unit: 64px;
   "trending"
   "projects";
   gap: $half-unit;
-  padding: $unit $half-unit;
+  padding: $unit $half-unit $double-unit $half-unit;
 
   color: color.$c5;
 
@@ -25,51 +25,50 @@ $double-unit: 64px;
 
   .projects {
     grid-area: projects;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-auto-rows: 1fr;
+    align-content: space-between;
+    gap: $unit;
 
     h2 {
-      margin-bottom: $unit;
+      grid-column: 1 / -1;
     }
 
-    .project-grid {
+    .card {
+      border-left: $half-unit solid color.$c4;
       display: grid;
-      grid-auto-rows: 225px;
-      gap: $unit;
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: auto repeat(3, $unit);
+      grid-template-areas: "title title title title"
+      "desc  desc  desc  desc"
+      "....  fave  watch share";
+      column-gap: $half-unit;
 
-      .card {
-        border-left: $half-unit solid color.$c4;
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        grid-template-columns: auto repeat(3, $unit);
-        grid-template-areas: "title title title title"
-        "desc  desc  desc  desc"
-        "....  fave  watch share";
-        column-gap: $half-unit;
+      .card-title {
+        grid-area: title;
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
 
-        .card-title {
-          grid-area: title;
-          font-weight: bold;
-          font-size: 1.25rem;
-        }
+      .card-description {
+        grid-area: desc;
+      }
 
-        .card-description {
-          grid-area: desc;
-        }
+      img {
+        width: $unit;
+      }
 
-        img {
-          width: $unit;
-        }
+      .fave {
+        grid-area: fave;
+      }
 
-        .fave {
-          grid-area: fave;
-        }
+      .watch {
+        grid-area: watch;
+      }
 
-        .watch {
-          grid-area: watch;
-        }
-
-        .share {
-          grid-area: share;
-        }
+      .share {
+        grid-area: share;
       }
     }
   }
@@ -111,7 +110,32 @@ $double-unit: 64px;
   .trending {
     grid-area: trending;
 
+    .profile {
+      display: grid;
+      grid-template-columns: $double-unit auto;
+      grid-template-rows: repeat(auto);
+      grid-template-areas: "avatar name"
+      "avatar title";
+      column-gap: $half-unit;
 
+      margin-bottom: $half-unit;
+
+      .avatar {
+        grid-area: avatar;
+      }
+
+      .name {
+        grid-area: name;
+        align-self: end;
+        font-weight: bold;
+      }
+
+      .title {
+        grid-area: title;
+        align-self: start;
+        color: color.$c4;
+      }
+    }
   }
 }
 
@@ -123,8 +147,9 @@ $double-unit: 64px;
     grid-template-areas: "announcements trending"
     "projects projects";
 
-    .projects .project-grid {
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    .projects {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      align-content: space-between;
     }
   }
 }
@@ -133,18 +158,13 @@ $double-unit: 64px;
 @media screen and (min-width: 992px) {
   .dash {
     grid-template-columns: repeat(3, 1fr) minmax(300px, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas: "projects projects projects announcements"
-                         "projects projects projects announcements"
-                         "projects projects projects announcements"
-                         "projects projects projects trending"
-                         "projects projects projects trending"
-                         "projects projects projects trending";
-
-    .projects .project-grid {
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      align-content: space-between;
-    }
+    "projects projects projects announcements"
+    "projects projects projects announcements"
+    "projects projects projects trending"
+    "projects projects projects trending"
+    "projects projects projects trending";
   }
 }
 
