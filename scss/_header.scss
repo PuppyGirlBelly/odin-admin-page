@@ -25,7 +25,13 @@ $half-unit: 16px;
 
     img {
       width: $unit;
+      height: $unit;
+      background-color: color.$c4;
+      -webkit-mask-image: url(../img/search.svg);
+      mask-image: url(../img/search.svg);
+      margin-top: 3px;
     }
+
     input {
       border-radius: $half-unit;
       border: none;
@@ -52,6 +58,10 @@ $half-unit: 16px;
 
     .bell {
       width: $unit;
+      height: $unit;
+      background-color: color.$c4;
+      -webkit-mask-image: url(../img/alert.svg);
+      mask-image: url(../img/alert.svg);
     }
     .avatar {
       width: calc($unit * 1.5);
@@ -122,4 +132,3 @@ $half-unit: 16px;
     }
   }
 }
-

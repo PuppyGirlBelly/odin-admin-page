@@ -42,7 +42,7 @@ $double-unit: 64px;
       grid-template-columns: auto repeat(3, $unit);
       grid-template-areas: "title title title title"
       "desc  desc  desc  desc"
-      "....  fave  watch share";
+      "....  fave  watch fork";
       column-gap: $half-unit;
 
       .card-title {
@@ -59,16 +59,28 @@ $double-unit: 64px;
         width: $unit;
       }
 
+      .fave, .watch, .fork {
+        background-color: color.$c4;
+        width: $unit;
+        height: $unit;
+      }
+
       .fave {
         grid-area: fave;
+        -webkit-mask-image: url(../img/favorite.svg);
+        mask-image: url(../img/favorite.svg);
       }
 
       .watch {
         grid-area: watch;
+        -webkit-mask-image: url(../img/watch.svg);
+        mask-image: url(../img/watch.svg);
       }
 
-      .share {
-        grid-area: share;
+      .fork {
+        grid-area: fork;
+        -webkit-mask-image: url(../img/fork.svg);
+        mask-image: url(../img/fork.svg);
       }
     }
   }
@@ -110,7 +122,7 @@ $double-unit: 64px;
   .trending {
     grid-area: trending;
 
-    .profile {
+    .account {
       display: grid;
       grid-template-columns: $double-unit auto;
       grid-template-rows: repeat(auto);

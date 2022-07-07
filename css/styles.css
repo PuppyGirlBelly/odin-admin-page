@@ -107,6 +107,11 @@
 .sidebar {
   background-color: #6D6875;
 }
+.sidebar img {
+  width: 32px;
+  height: 32px;
+  background-color: #FFCDB1;
+}
 .sidebar nav {
   padding-left: 20px;
   background-color: #6D6875;
@@ -120,6 +125,10 @@
   display: inline-block;
   vertical-align: middle;
   margin-right: 12px;
+  width: 64px;
+  height: 64px;
+  -webkit-mask-image: url(../img/dog.svg);
+  mask-image: url(../img/dog.svg);
 }
 .sidebar nav .logo span {
   font-size: 2.2rem;
@@ -145,12 +154,55 @@
   color: #FFCDB1;
 }
 .sidebar nav ul li a img {
-  width: 32px;
-  height: 32px;
   margin: 5px 6px;
 }
 .sidebar nav ul li a span {
   vertical-align: top;
+}
+
+.home {
+  -webkit-mask-image: url(../img/home.svg);
+  mask-image: url(../img/home.svg);
+}
+
+.profile {
+  -webkit-mask-image: url(../img/profile.svg);
+  mask-image: url(../img/profile.svg);
+}
+
+.messages {
+  -webkit-mask-image: url(../img/messages.svg);
+  mask-image: url(../img/messages.svg);
+}
+
+.history {
+  -webkit-mask-image: url(../img/history.svg);
+  mask-image: url(../img/history.svg);
+}
+
+.tasks {
+  -webkit-mask-image: url(../img/tasks.svg);
+  mask-image: url(../img/tasks.svg);
+}
+
+.communities {
+  -webkit-mask-image: url(../img/communities.svg);
+  mask-image: url(../img/communities.svg);
+}
+
+.settings {
+  -webkit-mask-image: url(../img/settings.svg);
+  mask-image: url(../img/settings.svg);
+}
+
+.support {
+  -webkit-mask-image: url(../img/support.svg);
+  mask-image: url(../img/support.svg);
+}
+
+.privacy {
+  -webkit-mask-image: url(../img/privacy.svg);
+  mask-image: url(../img/privacy.svg);
 }
 
 .header {
@@ -171,6 +223,11 @@
 }
 .header .search img {
   width: 32px;
+  height: 32px;
+  background-color: #B5838D;
+  -webkit-mask-image: url(../img/search.svg);
+  mask-image: url(../img/search.svg);
+  margin-top: 3px;
 }
 .header .search input {
   border-radius: 16px;
@@ -194,6 +251,10 @@
 }
 .header .profile-corner .bell {
   width: 32px;
+  height: 32px;
+  background-color: #B5838D;
+  -webkit-mask-image: url(../img/alert.svg);
+  mask-image: url(../img/alert.svg);
 }
 .header .profile-corner .avatar {
   width: 48px;
@@ -283,7 +344,7 @@
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: auto repeat(3, 32px);
-  grid-template-areas: "title title title title" "desc  desc  desc  desc" "....  fave  watch share";
+  grid-template-areas: "title title title title" "desc  desc  desc  desc" "....  fave  watch fork";
   column-gap: 16px;
 }
 .dash .projects .card .card-title {
@@ -297,14 +358,25 @@
 .dash .projects .card img {
   width: 32px;
 }
+.dash .projects .card .fave, .dash .projects .card .watch, .dash .projects .card .fork {
+  background-color: #B5838D;
+  width: 32px;
+  height: 32px;
+}
 .dash .projects .card .fave {
   grid-area: fave;
+  -webkit-mask-image: url(../img/favorite.svg);
+  mask-image: url(../img/favorite.svg);
 }
 .dash .projects .card .watch {
   grid-area: watch;
+  -webkit-mask-image: url(../img/watch.svg);
+  mask-image: url(../img/watch.svg);
 }
-.dash .projects .card .share {
-  grid-area: share;
+.dash .projects .card .fork {
+  grid-area: fork;
+  -webkit-mask-image: url(../img/fork.svg);
+  mask-image: url(../img/fork.svg);
 }
 .dash .announcements,
 .dash .trending {
@@ -338,7 +410,7 @@
 .dash .trending {
   grid-area: trending;
 }
-.dash .trending .profile {
+.dash .trending .account {
   display: grid;
   grid-template-columns: 64px auto;
   grid-template-rows: repeat(auto);
@@ -346,15 +418,15 @@
   column-gap: 16px;
   margin-bottom: 16px;
 }
-.dash .trending .profile .avatar {
+.dash .trending .account .avatar {
   grid-area: avatar;
 }
-.dash .trending .profile .name {
+.dash .trending .account .name {
   grid-area: name;
   align-self: end;
   font-weight: bold;
 }
-.dash .trending .profile .title {
+.dash .trending .account .title {
   grid-area: title;
   align-self: start;
   color: #B5838D;
@@ -388,6 +460,11 @@
 
 .avatar {
   border-radius: 50%;
+}
+
+img {
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 /*# sourceMappingURL=styles.css.map */

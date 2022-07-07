@@ -4,6 +4,12 @@
 .sidebar {
   background-color: color.$c5;
 
+  img {
+    width: 32px;
+    height: 32px;
+    background-color: color.$c1;
+  }
+
   nav {
     padding-left: 20px;
     background-color: color.$c5;
@@ -17,6 +23,10 @@
         display: inline-block;
         vertical-align: middle;
         margin-right: 12px;
+        width: 64px;
+        height: 64px;
+        -webkit-mask-image: url(../img/dog.svg);
+        mask-image: url(../img/dog.svg);
       }
 
       span {
@@ -46,8 +56,6 @@
           }
 
           img {
-            width: 32px;
-            height: 32px;
             margin: 5px 6px;
           }
 
@@ -58,5 +66,50 @@
       }
     }
   }
+}
+
+.home {
+  -webkit-mask-image: url(../img/home.svg);
+  mask-image: url(../img/home.svg);
+}
+
+.profile {
+  -webkit-mask-image: url(../img/profile.svg);
+  mask-image: url(../img/profile.svg);
+}
+
+.messages {
+  -webkit-mask-image: url(../img/messages.svg);
+  mask-image: url(../img/messages.svg);
+}
+
+.history {
+  -webkit-mask-image: url(../img/history.svg);
+  mask-image: url(../img/history.svg);
+}
+
+.tasks {
+  -webkit-mask-image: url(../img/tasks.svg);
+  mask-image: url(../img/tasks.svg);
+}
+
+.communities {
+  -webkit-mask-image: url(../img/communities.svg);
+  mask-image: url(../img/communities.svg);
+}
+
+.settings {
+  -webkit-mask-image: url(../img/settings.svg);
+  mask-image: url(../img/settings.svg);
+}
+
+.support {
+  -webkit-mask-image: url(../img/support.svg);
+  mask-image: url(../img/support.svg);
+}
+
+.privacy {
+  -webkit-mask-image: url(../img/privacy.svg);
+  mask-image: url(../img/privacy.svg);
 }
 
